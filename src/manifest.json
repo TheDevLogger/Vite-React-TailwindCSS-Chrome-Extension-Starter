@@ -1,0 +1,10 @@
+{
+  "name": "Vite React Chrome Extension",
+  "description": "Vite + React Chrome Extension Starter",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "action": {
+    "default_title": "Vite React Chrome Extension",
+    "default_popup": "index.html"
+  }
+}
