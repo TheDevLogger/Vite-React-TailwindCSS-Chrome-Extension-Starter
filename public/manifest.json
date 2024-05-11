@@ -7,5 +7,5 @@
     "default_title": "Vite React Chrome Extension",
     "default_popup": "index.html"
   },
-  "permissions": ["scripting", "activeTab"]
+  "permissions": ["tabs"]
 }
