@@ -5,10 +5,13 @@ First, install dependencies and check that the project runs correctly:
 ```bash
 bun install
 bun run dev
+bun install -D @types/chrome
 # or
 npm install
 npm run dev
+npm install -D @types/chrome 
 ```
+We got to install the types for chrome to avoid typescript errors.
 
 To build the project as a chrome extension, run:
 ```bash

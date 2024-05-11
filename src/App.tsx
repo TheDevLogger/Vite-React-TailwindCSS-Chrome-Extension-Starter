@@ -1,10 +1,17 @@
-import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const onClick = async () => {
+    let [tab] = await chrome.tabs.query({ active: true });
+    chrome.scripting.executeScript({
+      target: { tabId: tab.id! },
+      func: () => {
+        alert("Hello from the page");
+      },
+    });
+  };
 
   return (
     <>
@@ -16,13 +23,21 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
         <a href="https://tailwindcss.com" target="_blank">
-          <img src={"https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg"} className="logo react" alt="React logo" />
+          <img
+            src={
+              "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg"
+            }
+            className="logo react"
+            alt="React logo"
+          />
         </a>
       </div>
       <h1 className="text-lg font-bold">Vite + React + Tailwind CSS</h1>
       <div className="pt-5">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button
+          onClick={onClick}
+        >
+          count is {0}
         </button>
         <p className="pt-5">
           Edit <code>src/App.tsx</code> and save to test HMR
